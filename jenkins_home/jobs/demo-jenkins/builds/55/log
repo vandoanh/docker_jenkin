@@ -1,0 +1,56 @@
+Started by user [8mha:////4Grxr5YEoTU2x6PmVe18EB2Sv5GUMelkrtMFjDY3jKFIAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgZu/dLi1CL9xJTczDwAcQdo88AAAAA=[0mPhạm Văn Doanh
+Building in workspace /var/jenkins_home/workspace/demo-jenkins
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:vandoanh/demo-jenkins.git # timeout=10
+Fetching upstream changes from git@github.com:vandoanh/demo-jenkins.git
+ > git --version # timeout=10
+ > git fetch --tags --progress git@github.com:vandoanh/demo-jenkins.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 7962edc504884fb18586b340145f6c63bddca477 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 7962edc504884fb18586b340145f6c63bddca477
+Commit message: "sua sh file for run docker-compose"
+ > git rev-list --no-walk 7962edc504884fb18586b340145f6c63bddca477 # timeout=10
+[demo-jenkins] $ /bin/sh -xe /tmp/jenkins6442738583510446605.sh
++ ls -a
+.
+..
+.git
+_ide_helper.php
+app
+artisan
+bootstrap
+composer.json
+composer.lock
+config
+database
+doanh.php
+docker
+id_rsa.php
+index.php
+package-lock.json
+package.json
+phpunit.xml
+post-merge
+pre-commit
+public
+queue.sh
+readme.md
+resources
+routes
+rsa.php
+server.php
+setup.sh
+setup_docker.sh
+storage
+tests
+webpack.mix.js
++ cp docker/.env.example docker/.env
++ cd docker
++ docker-compose exec php-fpm bash
+the input device is not a TTY
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

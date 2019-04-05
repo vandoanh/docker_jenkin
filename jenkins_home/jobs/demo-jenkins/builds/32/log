@@ -1,0 +1,24 @@
+Started by user [8mha:////4Grxr5YEoTU2x6PmVe18EB2Sv5GUMelkrtMFjDY3jKFIAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgZu/dLi1CL9xJTczDwAcQdo88AAAAA=[0mPhạm Văn Doanh
+Building in workspace /var/jenkins_home/workspace/demo-jenkins
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:vandoanh/demo-jenkins.git # timeout=10
+Fetching upstream changes from git@github.com:vandoanh/demo-jenkins.git
+ > git --version # timeout=10
+ > git fetch --tags --progress git@github.com:vandoanh/demo-jenkins.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 58f936b528d8ad0208082b3319b3b76e94229c4b (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 58f936b528d8ad0208082b3319b3b76e94229c4b
+Commit message: "dfdfd"
+ > git rev-list --no-walk 58f936b528d8ad0208082b3319b3b76e94229c4b # timeout=10
+[demo-jenkins] $ /bin/sh -xe /tmp/jenkins7792310408897510003.sh
++ cd docker
++ docker-compose up --build
+Couldn't connect to Docker daemon at http+docker://localunixsocket - is it running?
+
+If it's at a non-standard location, specify the URL with the DOCKER_HOST environment variable.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

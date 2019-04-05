@@ -1,0 +1,723 @@
+Started by user [8mha:////4Grxr5YEoTU2x6PmVe18EB2Sv5GUMelkrtMFjDY3jKFIAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgZu/dLi1CL9xJTczDwAcQdo88AAAAA=[0mPhạm Văn Doanh
+Building in workspace /var/jenkins_home/workspace/demo-jenkins
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:vandoanh/demo-jenkins.git # timeout=10
+Fetching upstream changes from git@github.com:vandoanh/demo-jenkins.git
+ > git --version # timeout=10
+ > git fetch --tags --progress git@github.com:vandoanh/demo-jenkins.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 8a4ee306a6f169bf6d67e6830282960e90137fa3 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8a4ee306a6f169bf6d67e6830282960e90137fa3
+Commit message: "fdfdfd"
+ > git rev-list --no-walk 6484a05ea97ab632b9e904aac658501ac75effed # timeout=10
+[demo-jenkins] $ /bin/sh -xe /tmp/jenkins1343907997674194643.sh
++ sh setup_docker.sh
+Run docker
+Building php-fpm
+Step 1/27 : FROM php:7.1-fpm
+ ---> 500905b2d394
+Step 2/27 : LABEL maintainer="Do Quyet Tien <doquyettien@gmail.com>"
+ ---> Using cache
+ ---> dad7cf351a91
+Step 3/27 : RUN apt-get update &&     apt-get upgrade -y &&     apt-get install -y     sudo     vim     git     curl     libmemcached-dev     libz-dev     libpq-dev     libjpeg-dev     libpng-dev     libfreetype6-dev     libssl-dev     libmcrypt-dev     libgmp-dev     libzip-dev zip unzip &&     docker-php-ext-install pdo_mysql &&     docker-php-ext-configure zip --with-libzip &&     docker-php-ext-install zip &&     php -m | grep -q 'zip'     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/     && docker-php-ext-install -j$(nproc) gd     && docker-php-ext-install pcntl     && docker-php-ext-install bcmath     && docker-php-ext-install gmp     && docker-php-ext-install exif     && docker-php-ext-install mysqli     && docker-php-ext-install mcrypt     && rm -rf /var/lib/apt/lists/*
+ ---> Using cache
+ ---> 575ad0e2bc0a
+Step 4/27 : ARG TZ=UTC
+ ---> Using cache
+ ---> b0374cfea851
+Step 5/27 : ENV TZ ${TZ}
+ ---> Using cache
+ ---> 0b1f26a2238d
+Step 6/27 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ ---> Using cache
+ ---> f52c31c642fe
+Step 7/27 : RUN pecl install -o -f redis     && rm -rf /tmp/pear     && docker-php-ext-enable redis
+ ---> Using cache
+ ---> 9d10eea5925f
+Step 8/27 : RUN curl -L -o /tmp/memcached.tar.gz "https://github.com/php-memcached-dev/php-memcached/archive/php7.tar.gz"     && mkdir -p memcached     && tar -C memcached -zxvf /tmp/memcached.tar.gz --strip 1     && (         cd memcached         && phpize         && ./configure         && make -j$(nproc)         && make install     )     && rm -r memcached     && rm /tmp/memcached.tar.gz     && docker-php-ext-enable memcached
+ ---> Using cache
+ ---> 479e8b1b3f23
+Step 9/27 : RUN docker-php-ext-install opcache
+ ---> Using cache
+ ---> af591b1d817f
+Step 10/27 : COPY ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+ ---> Using cache
+ ---> 22cf7894cf0d
+Step 11/27 : USER root
+ ---> Using cache
+ ---> 3521a6c1fc57
+Step 12/27 : RUN apt-get update -yqq &&     apt-get -y install mysql-client
+ ---> Using cache
+ ---> b1dcf17d394e
+Step 13/27 : RUN curl -sL https://deb.nodesource.com/setup_11.x | bash - &&     apt-get -y install nodejs
+ ---> Using cache
+ ---> 890c091ef324
+Step 14/27 : RUN node -v && npm -v
+ ---> Using cache
+ ---> aca8d63bc210
+Step 15/27 : RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+ ---> Using cache
+ ---> 710529d9fa25
+Step 16/27 : USER root
+ ---> Using cache
+ ---> 73167f06a20f
+Step 17/27 : COPY ./crontab /etc/cron.d
+ ---> Using cache
+ ---> eb759c24fc7e
+Step 18/27 : RUN chmod -R 644 /etc/cron.d
+ ---> Using cache
+ ---> 49777fa9d5db
+Step 19/27 : RUN set -xe; php -v | head -n 1 | grep -q "PHP ${PHP_VERSION}."
+ ---> Using cache
+ ---> 659300d754aa
+Step 20/27 : COPY ./laravel.ini /usr/local/etc/php/conf.d
+ ---> Using cache
+ ---> 024f2e8cb8d9
+Step 21/27 : COPY ./php.ini /usr/local/etc/php/php.ini
+ ---> Using cache
+ ---> 19d3cb360aaf
+Step 22/27 : USER root
+ ---> Using cache
+ ---> c882e8cadf21
+Step 23/27 : RUN apt-get clean &&     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&     rm /var/log/lastlog /var/log/faillog
+ ---> Using cache
+ ---> a0ef9356dfe0
+Step 24/27 : RUN usermod -u 1000 www-data
+ ---> Using cache
+ ---> 194ef1cceeeb
+Step 25/27 : WORKDIR /usr/share/nginx/html/blog
+ ---> Using cache
+ ---> f9a94a364e10
+Step 26/27 : CMD ["php-fpm"]
+ ---> Using cache
+ ---> db566b0d51fa
+Step 27/27 : EXPOSE 9000
+ ---> Using cache
+ ---> 4d082b776b3c
+Successfully built 4d082b776b3c
+Successfully tagged blog_php-fpm:latest
+Building nginx
+Step 1/16 : FROM nginx
+ ---> 881bd08c0b08
+Step 2/16 : LABEL maintainer="Do Quyet Tien <doquyettien@gmail.com>"
+ ---> Using cache
+ ---> 909923a4d87b
+Step 3/16 : ARG PHP_UPSTREAM_CONTAINER=php-fpm
+ ---> Using cache
+ ---> 59fa9479d039
+Step 4/16 : ARG PHP_UPSTREAM_PORT=9000
+ ---> Using cache
+ ---> de101b956b89
+Step 5/16 : RUN apt-get update     && apt-get upgrade     && apt-get -y install openssl     bash     vim     curl     && adduser -H -u 1000 -s /bin/bash www-data
+ ---> Using cache
+ ---> 49f95b9e662d
+Step 6/16 : ARG TZ=UTC
+ ---> Using cache
+ ---> 7db1701a0ee8
+Step 7/16 : ENV TZ ${TZ}
+ ---> Using cache
+ ---> d901a8f4ecf9
+Step 8/16 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+ ---> Using cache
+ ---> 9c7b577423a8
+Step 9/16 : RUN echo "upstream php-upstream { server ${PHP_UPSTREAM_CONTAINER}:${PHP_UPSTREAM_PORT}; }" > /etc/nginx/conf.d/upstream.conf     && rm /etc/nginx/conf.d/default.conf
+ ---> Using cache
+ ---> 23399f5fa8e1
+Step 10/16 : COPY ./nginx.conf /etc/nginx/
+ ---> Using cache
+ ---> 67c47ba573f5
+Step 11/16 : COPY ./fastcgi.conf /etc/nginx/
+ ---> Using cache
+ ---> f74a7d8bb2b6
+Step 12/16 : COPY ./app.conf /etc/nginx/conf.d
+ ---> Using cache
+ ---> 909859d834f0
+Step 13/16 : RUN curl -L -o /tmp/phpMyAdmin.tar.gz "https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-english.tar.gz"     && mkdir -p /usr/share/nginx/html/phpMyAdmin     && tar -C /usr/share/nginx/html/phpMyAdmin -zxvf /tmp/phpMyAdmin.tar.gz --strip 1     && rm /tmp/phpMyAdmin.tar.gz
+ ---> Using cache
+ ---> 56241b36bb91
+Step 14/16 : RUN curl -L -o /usr/share/nginx/html/adminer.php "https://github.com/vrana/adminer/releases/download/v4.7.1/adminer-4.7.1-mysql-en.php"
+ ---> Using cache
+ ---> e34d82d46f81
+Step 15/16 : CMD ["nginx"]
+ ---> Using cache
+ ---> 9a68c59073ba
+Step 16/16 : EXPOSE 80 443 9100
+ ---> Using cache
+ ---> 1c2bbd8fbd2b
+Successfully built 1c2bbd8fbd2b
+Successfully tagged blog_nginx:latest
+Building mysql
+Step 1/9 : ARG MYSQL_VERSION=latest
+Step 2/9 : FROM mysql:${MYSQL_VERSION}
+ ---> ee7cbd482336
+Step 3/9 : LABEL maintainer="Do Quyet Tien <doquyettien@gmail.com>"
+ ---> Using cache
+ ---> 888d9b89aca5
+Step 4/9 : ARG TZ=UTC
+ ---> Using cache
+ ---> ce77a98d4b5b
+Step 5/9 : ENV TZ ${TZ}
+ ---> Using cache
+ ---> 22235d0162e3
+Step 6/9 : RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && chown -R mysql:root /var/lib/mysql/
+ ---> Using cache
+ ---> 573a061801b5
+Step 7/9 : COPY my.cnf /etc/mysql/conf.d/my.cnf
+ ---> Using cache
+ ---> 24d7f8848c26
+Step 8/9 : CMD ["mysqld"]
+ ---> Using cache
+ ---> 2aa78d8548f7
+Step 9/9 : EXPOSE 3306
+ ---> Using cache
+ ---> 0570aacbcf75
+Successfully built 0570aacbcf75
+Successfully tagged blog_mysql:latest
+Building redis
+Step 1/7 : FROM redis:latest
+ ---> 4161e91dcc29
+Step 2/7 : LABEL maintainer="Do Quyet Tien <doquyettien@gmail.com>"
+ ---> Using cache
+ ---> 73d08ef1be96
+Step 3/7 : RUN mkdir -p /usr/local/etc/redis
+ ---> Using cache
+ ---> 6e08330612b3
+Step 4/7 : COPY redis.conf /usr/local/etc/redis/redis.conf
+ ---> Using cache
+ ---> 813db768e4e4
+Step 5/7 : VOLUME /data
+ ---> Using cache
+ ---> d09f0866bc2f
+Step 6/7 : EXPOSE 6379
+ ---> Using cache
+ ---> 8c9348fe0a42
+Step 7/7 : CMD ["redis-server"]
+ ---> Using cache
+ ---> d299f3416156
+Successfully built d299f3416156
+Successfully tagged blog_redis:latest
+Building memcached
+Step 1/4 : FROM memcached:latest
+ ---> b26493421cee
+Step 2/4 : LABEL maintainer="Do Quyet Tien <doquyettien@gmail.com>"
+ ---> Using cache
+ ---> 72a3e4823ce9
+Step 3/4 : CMD ["memcached"]
+ ---> Using cache
+ ---> 9af7ea65fd30
+Step 4/4 : EXPOSE 11211
+ ---> Using cache
+ ---> f80671d587b9
+Successfully built f80671d587b9
+Successfully tagged blog_memcached:latest
+Building elasticsearch
+Step 1/2 : FROM docker.elastic.co/elasticsearch/elasticsearch:6.6.0
+ ---> 13aa43015aa1
+Step 2/2 : EXPOSE 9200 9300
+ ---> Using cache
+ ---> d262f4a1c818
+Successfully built d262f4a1c818
+Successfully tagged blog_elasticsearch:latest
+blog_php-fpm_1 is up-to-date
+blog_mysql_1 is up-to-date
+blog_elasticsearch_1 is up-to-date
+blog_redis_1 is up-to-date
+blog_memcached_1 is up-to-date
+blog_nginx_1 is up-to-date
+[403] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+Run composer install.
+[408] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+Create App key.
+[413] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+Create storage folder and sub folder: app, framework (cache, sessions, views), logs.
+[418] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[423] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[428] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[433] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[438] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[443] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[448] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+Change mod write 777 for folder and sub of bootstrap and storage folder.
+[453] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+Run npm install -g pm2.
+[458] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+Run npm install && npm run production.
+[463] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[468] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+Run pm2 start queue.sh to monitor queue worker.
+[473] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+Run migrate & db seed
+[478] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[483] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[488] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[493] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[498] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+[503] Failed to execute script docker-compose
+Traceback (most recent call last):
+  File "site-packages/dockerpty/pty.py", line 334, in start
+  File "site-packages/dockerpty/pty.py", line 367, in _hijack_tty
+  File "site-packages/dockerpty/io.py", line 59, in select
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "bin/docker-compose", line 6, in <module>
+  File "compose/cli/main.py", line 71, in main
+  File "compose/cli/main.py", line 127, in perform_command
+  File "compose/cli/main.py", line 535, in exec_command
+  File "site-packages/dockerpty/pty.py", line 338, in start
+  File "site-packages/dockerpty/io.py", line 32, in set_blocking
+  File "site-packages/dockerpty/io.py", line 351, in fileno
+  File "site-packages/dockerpty/io.py", line 103, in fileno
+  File "socket.py", line 635, in fileno
+ValueError: I/O operation on closed file.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

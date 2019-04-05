@@ -1,0 +1,22 @@
+Started by user [8mha:////4H7lyRDrp7UNo7wHF5z1xnqW0KhGbpH8R2JnyBOQh+z9AAAAlB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CIwYQgArCnDKcAAAAA=[0muser1
+Building in workspace /var/jenkins_home/workspace/demo-jenkins
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:vandoanh/demo-jenkins.git # timeout=10
+Fetching upstream changes from git@github.com:vandoanh/demo-jenkins.git
+ > git --version # timeout=10
+ > git fetch --tags --progress git@github.com:vandoanh/demo-jenkins.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 3b02d312c6b737d031564178d3529bba626be366 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 3b02d312c6b737d031564178d3529bba626be366
+Commit message: "chay ngon ne"
+ > git rev-list --no-walk d92f0c20430cb835f9818a6cd981ed776206815b # timeout=10
+[demo-jenkins] $ /bin/sh -xe /tmp/jenkins1575433607178215338.sh
++ php index.php test.php
+PHP Parse error:  syntax error, unexpected end of file, expecting ',' or ';' in /var/jenkins_home/workspace/demo-jenkins/index.php on line 3
+Build step 'Execute shell' marked build as failure
+An attempt to send an e-mail to empty list of recipients, ignored.
+Finished: FAILURE

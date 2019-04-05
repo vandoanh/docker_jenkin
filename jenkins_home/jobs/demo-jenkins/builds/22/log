@@ -1,0 +1,64 @@
+Started by user [8mha:////4Grxr5YEoTU2x6PmVe18EB2Sv5GUMelkrtMFjDY3jKFIAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgZu/dLi1CL9xJTczDwAcQdo88AAAAA=[0mPhạm Văn Doanh
+Building in workspace /var/jenkins_home/workspace/demo-jenkins
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:vandoanh/demo-jenkins.git # timeout=10
+Fetching upstream changes from git@github.com:vandoanh/demo-jenkins.git
+ > git --version # timeout=10
+ > git fetch --tags --progress git@github.com:vandoanh/demo-jenkins.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision cbedc690e445bfd6d301b395880f3c615b251032 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f cbedc690e445bfd6d301b395880f3c615b251032
+Commit message: "laravel"
+ > git rev-list --no-walk 7cdcd25ae6fc68a10f6525a357c0be10c77f92b4 # timeout=10
+[demo-jenkins] $ /bin/sh -xe /tmp/jenkins3266323302345738149.sh
++ sh setup_docker.sh
+Install docker
+setup_docker.sh: 4: setup_docker.sh: sudo: not found
+(23) Failed writing body
+setup_docker.sh: 5: setup_docker.sh: lsb_release: not found
+setup_docker.sh: 5: setup_docker.sh: sudo: not found
+setup_docker.sh: 6: setup_docker.sh: sudo: not found
+setup_docker.sh: 7: setup_docker.sh: sudo: not found
+Add user to group docker
+setup_docker.sh: 10: setup_docker.sh: sudo: not found
+Install docker-compose
+setup_docker.sh: 13: setup_docker.sh: sudo: not found
+setup_docker.sh: 14: setup_docker.sh: sudo: not found
+Run docker
+setup_docker.sh: 22: setup_docker.sh: docker-compose: not found
+Copy .env.docker to .env
+setup_docker.sh: 29: setup_docker.sh: docker-compose: not found
+Run composer install.
+setup_docker.sh: 32: setup_docker.sh: docker-compose: not found
+Create App key.
+setup_docker.sh: 35: setup_docker.sh: docker-compose: not found
+Create storage folder and sub folder: app, framework (cache, sessions, views), logs.
+setup_docker.sh: 38: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 39: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 40: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 41: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 42: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 43: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 44: setup_docker.sh: docker-compose: not found
+Change mod write 777 for folder and sub of bootstrap and storage folder.
+setup_docker.sh: 47: setup_docker.sh: docker-compose: not found
+Run npm install -g pm2.
+setup_docker.sh: 50: setup_docker.sh: docker-compose: not found
+Run npm install && npm run production.
+setup_docker.sh: 53: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 54: setup_docker.sh: docker-compose: not found
+Run pm2 start queue.sh to monitor queue worker.
+setup_docker.sh: 57: setup_docker.sh: docker-compose: not found
+Run migrate & db seed
+setup_docker.sh: 60: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 61: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 62: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 63: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 64: setup_docker.sh: docker-compose: not found
+setup_docker.sh: 65: setup_docker.sh: docker-compose: not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

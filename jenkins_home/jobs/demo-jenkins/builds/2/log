@@ -1,0 +1,22 @@
+Started by user [8mha:////4Grxr5YEoTU2x6PmVe18EB2Sv5GUMelkrtMFjDY3jKFIAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgZu/dLi1CL9xJTczDwAcQdo88AAAAA=[0mPhạm Văn Doanh
+Building in workspace /var/jenkins_home/workspace/demo-jenkins
+No credentials specified
+Cloning the remote Git repository
+Cloning repository git@github.com:vandoanh/demo-jenkins.git
+ > git init /var/jenkins_home/workspace/demo-jenkins # timeout=10
+Fetching upstream changes from git@github.com:vandoanh/demo-jenkins.git
+ > git --version # timeout=10
+ > git fetch --tags --progress git@github.com:vandoanh/demo-jenkins.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url git@github.com:vandoanh/demo-jenkins.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url git@github.com:vandoanh/demo-jenkins.git # timeout=10
+Fetching upstream changes from git@github.com:vandoanh/demo-jenkins.git
+ > git fetch --tags --progress git@github.com:vandoanh/demo-jenkins.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 2bdb8900b737373f883bf45548c8e43e0636b2d8 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 2bdb8900b737373f883bf45548c8e43e0636b2d8
+Commit message: "chay ngon ne"
+ > git rev-list --no-walk c84d350c462cb5b43e4c63939e4dc7d6eb7c6dd5 # timeout=10
+Finished: SUCCESS

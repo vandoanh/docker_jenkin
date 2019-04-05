@@ -1,0 +1,11 @@
+commit 7962edc504884fb18586b340145f6c63bddca477
+tree 379e0e4352fcdf03239e682d0d1aff7eea92d641
+parent 6b25dc21e5528878c715c599c7f94ad13316268f
+author Pham Van Doanh <doanhpv2@evolableasia.vn> 2019-04-05 10:04:39 +0700
+committer Pham Van Doanh <doanhpv2@evolableasia.vn> 2019-04-05 10:04:39 +0700
+
+    sua sh file for run docker-compose
+
+
+
+:100644 100644 8c7a9c90d906a6424b2ce389b14c48a4ae8c9d78 c62ca894b8f5290205a00485e0df70321bb4a218 M	setup_docker.sh

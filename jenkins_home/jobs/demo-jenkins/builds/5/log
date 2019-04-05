@@ -1,0 +1,17 @@
+Started by user [8mha:////4H7lyRDrp7UNo7wHF5z1xnqW0KhGbpH8R2JnyBOQh+z9AAAAlB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CIwYQgArCnDKcAAAAA=[0muser1
+Building in workspace /var/jenkins_home/workspace/demo-jenkins
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:vandoanh/demo-jenkins.git # timeout=10
+Fetching upstream changes from git@github.com:vandoanh/demo-jenkins.git
+ > git --version # timeout=10
+ > git fetch --tags --progress git@github.com:vandoanh/demo-jenkins.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 6837a1f138d5cb66ab39bf9d640c61b81d68d6ab (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 6837a1f138d5cb66ab39bf9d640c61b81d68d6ab
+Commit message: "chay ngon ne"
+ > git rev-list --no-walk 6837a1f138d5cb66ab39bf9d640c61b81d68d6ab # timeout=10
+Finished: SUCCESS

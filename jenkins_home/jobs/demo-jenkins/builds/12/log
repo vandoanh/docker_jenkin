@@ -1,0 +1,459 @@
+Started by user [8mha:////4Grxr5YEoTU2x6PmVe18EB2Sv5GUMelkrtMFjDY3jKFIAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgZu/dLi1CL9xJTczDwAcQdo88AAAAA=[0mPhạm Văn Doanh
+Building in workspace /var/jenkins_home/workspace/demo-jenkins
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:vandoanh/demo-jenkins.git # timeout=10
+Fetching upstream changes from git@github.com:vandoanh/demo-jenkins.git
+ > git --version # timeout=10
+ > git fetch --tags --progress git@github.com:vandoanh/demo-jenkins.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 7cdcd25ae6fc68a10f6525a357c0be10c77f92b4 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 7cdcd25ae6fc68a10f6525a357c0be10c77f92b4
+Commit message: "chay ngon ne 1"
+ > git rev-list --no-walk 8d3263fc7d9e975322d30141d3de0bacb30420bb # timeout=10
+[demo-jenkins] $ /bin/sh -xe /tmp/jenkins7219466801983830356.sh
++ find .
++ EXTENSION=
++ [  == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: unexpected operator
++ [  == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: unexpected operator
++ EXTENSION=php
++ [ php == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: php: unexpected operator
++ [ php == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: php: unexpected operator
++ EXTENSION=php
++ [ php == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: php: unexpected operator
++ [ php == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: php: unexpected operator
++ EXTENSION=git
++ [ git == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git: unexpected operator
++ [ git == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git: unexpected operator
++ EXTENSION=git/index
++ [ git/index == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/index: unexpected operator
++ [ git/index == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/index: unexpected operator
++ EXTENSION=git/hooks
++ [ git/hooks == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/hooks: unexpected operator
++ [ git/hooks == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/hooks: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=sample
++ [ sample == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ [ sample == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: sample: unexpected operator
++ EXTENSION=git/FETCH_HEAD
++ [ git/FETCH_HEAD == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/FETCH_HEAD: unexpected operator
++ [ git/FETCH_HEAD == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/FETCH_HEAD: unexpected operator
++ EXTENSION=git/logs
++ [ git/logs == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs: unexpected operator
++ [ git/logs == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs: unexpected operator
++ EXTENSION=git/logs/HEAD
++ [ git/logs/HEAD == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/HEAD: unexpected operator
++ [ git/logs/HEAD == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/HEAD: unexpected operator
++ EXTENSION=git/logs/refs
++ [ git/logs/refs == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs: unexpected operator
++ [ git/logs/refs == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs: unexpected operator
++ EXTENSION=git/logs/refs/remotes
++ [ git/logs/refs/remotes == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs/remotes: unexpected operator
++ [ git/logs/refs/remotes == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs/remotes: unexpected operator
++ EXTENSION=git/logs/refs/remotes/origin
++ [ git/logs/refs/remotes/origin == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs/remotes/origin: unexpected operator
++ [ git/logs/refs/remotes/origin == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs/remotes/origin: unexpected operator
++ EXTENSION=git/logs/refs/remotes/origin/master
++ [ git/logs/refs/remotes/origin/master == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs/remotes/origin/master: unexpected operator
++ [ git/logs/refs/remotes/origin/master == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs/remotes/origin/master: unexpected operator
++ EXTENSION=git/logs/refs/remotes/origin/test1
++ [ git/logs/refs/remotes/origin/test1 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs/remotes/origin/test1: unexpected operator
++ [ git/logs/refs/remotes/origin/test1 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/logs/refs/remotes/origin/test1: unexpected operator
++ EXTENSION=git/branches
++ [ git/branches == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/branches: unexpected operator
++ [ git/branches == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/branches: unexpected operator
++ EXTENSION=git/HEAD
++ [ git/HEAD == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/HEAD: unexpected operator
++ [ git/HEAD == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/HEAD: unexpected operator
++ EXTENSION=git/objects
++ [ git/objects == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects: unexpected operator
++ [ git/objects == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects: unexpected operator
++ EXTENSION=git/objects/ea
++ [ git/objects/ea == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/ea: unexpected operator
++ [ git/objects/ea == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/ea: unexpected operator
++ EXTENSION=git/objects/ea/22fa4f8546a2b06180f8d3bade44d1b1038e07
++ [ git/objects/ea/22fa4f8546a2b06180f8d3bade44d1b1038e07 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/ea/22fa4f8546a2b06180f8d3bade44d1b1038e07: unexpected operator
++ [ git/objects/ea/22fa4f8546a2b06180f8d3bade44d1b1038e07 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/ea/22fa4f8546a2b06180f8d3bade44d1b1038e07: unexpected operator
++ EXTENSION=git/objects/35
++ [ git/objects/35 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/35: unexpected operator
++ [ git/objects/35 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/35: unexpected operator
++ EXTENSION=git/objects/35/ba3757ea9396dfe1c47534f64a47f779b1fa7c
++ [ git/objects/35/ba3757ea9396dfe1c47534f64a47f779b1fa7c == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/35/ba3757ea9396dfe1c47534f64a47f779b1fa7c: unexpected operator
++ [ git/objects/35/ba3757ea9396dfe1c47534f64a47f779b1fa7c == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/35/ba3757ea9396dfe1c47534f64a47f779b1fa7c: unexpected operator
++ EXTENSION=git/objects/47
++ [ git/objects/47 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/47: unexpected operator
++ [ git/objects/47 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/47: unexpected operator
++ EXTENSION=git/objects/47/600ae8c1c13915c600707d7b20dcbba7d9ebc2
++ [ git/objects/47/600ae8c1c13915c600707d7b20dcbba7d9ebc2 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/47/600ae8c1c13915c600707d7b20dcbba7d9ebc2: unexpected operator
++ [ git/objects/47/600ae8c1c13915c600707d7b20dcbba7d9ebc2 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/47/600ae8c1c13915c600707d7b20dcbba7d9ebc2: unexpected operator
++ EXTENSION=git/objects/c8
++ [ git/objects/c8 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/c8: unexpected operator
++ [ git/objects/c8 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/c8: unexpected operator
++ EXTENSION=git/objects/c8/4d350c462cb5b43e4c63939e4dc7d6eb7c6dd5
++ [ git/objects/c8/4d350c462cb5b43e4c63939e4dc7d6eb7c6dd5 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/c8/4d350c462cb5b43e4c63939e4dc7d6eb7c6dd5: unexpected operator
++ [ git/objects/c8/4d350c462cb5b43e4c63939e4dc7d6eb7c6dd5 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/c8/4d350c462cb5b43e4c63939e4dc7d6eb7c6dd5: unexpected operator
++ EXTENSION=git/objects/de
++ [ git/objects/de == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/de: unexpected operator
++ [ git/objects/de == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/de: unexpected operator
++ EXTENSION=git/objects/de/c1e738f7ecf8793505d9241821af2defe5747c
++ [ git/objects/de/c1e738f7ecf8793505d9241821af2defe5747c == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/de/c1e738f7ecf8793505d9241821af2defe5747c: unexpected operator
++ [ git/objects/de/c1e738f7ecf8793505d9241821af2defe5747c == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/de/c1e738f7ecf8793505d9241821af2defe5747c: unexpected operator
++ EXTENSION=git/objects/db
++ [ git/objects/db == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/db: unexpected operator
++ [ git/objects/db == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/db: unexpected operator
++ EXTENSION=git/objects/db/05483cb9c0282dfd07519251ac166062d18341
++ [ git/objects/db/05483cb9c0282dfd07519251ac166062d18341 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/db/05483cb9c0282dfd07519251ac166062d18341: unexpected operator
++ [ git/objects/db/05483cb9c0282dfd07519251ac166062d18341 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/db/05483cb9c0282dfd07519251ac166062d18341: unexpected operator
++ EXTENSION=git/objects/68
++ [ git/objects/68 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/68: unexpected operator
++ [ git/objects/68 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/68: unexpected operator
++ EXTENSION=git/objects/68/37a1f138d5cb66ab39bf9d640c61b81d68d6ab
++ [ git/objects/68/37a1f138d5cb66ab39bf9d640c61b81d68d6ab == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/68/37a1f138d5cb66ab39bf9d640c61b81d68d6ab: unexpected operator
++ [ git/objects/68/37a1f138d5cb66ab39bf9d640c61b81d68d6ab == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/68/37a1f138d5cb66ab39bf9d640c61b81d68d6ab: unexpected operator
++ EXTENSION=git/objects/0a
++ [ git/objects/0a == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/0a: unexpected operator
++ [ git/objects/0a == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/0a: unexpected operator
++ EXTENSION=git/objects/0a/3567ab6e4f9b929fcb538f861a3d4d1cd80c8d
++ [ git/objects/0a/3567ab6e4f9b929fcb538f861a3d4d1cd80c8d == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/0a/3567ab6e4f9b929fcb538f861a3d4d1cd80c8d: unexpected operator
++ [ git/objects/0a/3567ab6e4f9b929fcb538f861a3d4d1cd80c8d == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/0a/3567ab6e4f9b929fcb538f861a3d4d1cd80c8d: unexpected operator
++ EXTENSION=git/objects/2a
++ [ git/objects/2a == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/2a: unexpected operator
++ [ git/objects/2a == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/2a: unexpected operator
++ EXTENSION=git/objects/2a/3e348211213fc3e87279d2c6a6166abf81be4d
++ [ git/objects/2a/3e348211213fc3e87279d2c6a6166abf81be4d == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/2a/3e348211213fc3e87279d2c6a6166abf81be4d: unexpected operator
++ [ git/objects/2a/3e348211213fc3e87279d2c6a6166abf81be4d == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/2a/3e348211213fc3e87279d2c6a6166abf81be4d: unexpected operator
++ EXTENSION=git/objects/23
++ [ git/objects/23 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/23: unexpected operator
++ [ git/objects/23 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/23: unexpected operator
++ EXTENSION=git/objects/23/a7873f4df6ad138bd4addaf32dbc2dbb7dda83
++ [ git/objects/23/a7873f4df6ad138bd4addaf32dbc2dbb7dda83 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/23/a7873f4df6ad138bd4addaf32dbc2dbb7dda83: unexpected operator
++ [ git/objects/23/a7873f4df6ad138bd4addaf32dbc2dbb7dda83 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/23/a7873f4df6ad138bd4addaf32dbc2dbb7dda83: unexpected operator
++ EXTENSION=git/objects/0f
++ [ git/objects/0f == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/0f: unexpected operator
++ [ git/objects/0f == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/0f: unexpected operator
++ EXTENSION=git/objects/0f/2b131ab59d879598db9afe95dcc07b5ea24012
++ [ git/objects/0f/2b131ab59d879598db9afe95dcc07b5ea24012 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/0f/2b131ab59d879598db9afe95dcc07b5ea24012: unexpected operator
++ [ git/objects/0f/2b131ab59d879598db9afe95dcc07b5ea24012 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/0f/2b131ab59d879598db9afe95dcc07b5ea24012: unexpected operator
++ EXTENSION=git/objects/2b
++ [ git/objects/2b == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/2b: unexpected operator
++ [ git/objects/2b == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/2b: unexpected operator
++ EXTENSION=git/objects/2b/db8900b737373f883bf45548c8e43e0636b2d8
++ [ git/objects/2b/db8900b737373f883bf45548c8e43e0636b2d8 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/2b/db8900b737373f883bf45548c8e43e0636b2d8: unexpected operator
++ [ git/objects/2b/db8900b737373f883bf45548c8e43e0636b2d8 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/2b/db8900b737373f883bf45548c8e43e0636b2d8: unexpected operator
++ EXTENSION=git/objects/3b
++ [ git/objects/3b == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/3b: unexpected operator
++ [ git/objects/3b == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/3b: unexpected operator
++ EXTENSION=git/objects/3b/02d312c6b737d031564178d3529bba626be366
++ [ git/objects/3b/02d312c6b737d031564178d3529bba626be366 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/3b/02d312c6b737d031564178d3529bba626be366: unexpected operator
++ [ git/objects/3b/02d312c6b737d031564178d3529bba626be366 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/3b/02d312c6b737d031564178d3529bba626be366: unexpected operator
++ EXTENSION=git/objects/3b/c9dfd5e10a24168a44a0d8c2d5f2bbbf6c806e
++ [ git/objects/3b/c9dfd5e10a24168a44a0d8c2d5f2bbbf6c806e == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/3b/c9dfd5e10a24168a44a0d8c2d5f2bbbf6c806e: unexpected operator
++ [ git/objects/3b/c9dfd5e10a24168a44a0d8c2d5f2bbbf6c806e == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/3b/c9dfd5e10a24168a44a0d8c2d5f2bbbf6c806e: unexpected operator
++ EXTENSION=git/objects/8d
++ [ git/objects/8d == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/8d: unexpected operator
++ [ git/objects/8d == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/8d: unexpected operator
++ EXTENSION=git/objects/8d/3263fc7d9e975322d30141d3de0bacb30420bb
++ [ git/objects/8d/3263fc7d9e975322d30141d3de0bacb30420bb == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/8d/3263fc7d9e975322d30141d3de0bacb30420bb: unexpected operator
++ [ git/objects/8d/3263fc7d9e975322d30141d3de0bacb30420bb == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/8d/3263fc7d9e975322d30141d3de0bacb30420bb: unexpected operator
++ EXTENSION=git/objects/c7
++ [ git/objects/c7 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/c7: unexpected operator
++ [ git/objects/c7 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/c7: unexpected operator
++ EXTENSION=git/objects/c7/a8f170b0e39e8d07a23ca115b4c836fa1502f7
++ [ git/objects/c7/a8f170b0e39e8d07a23ca115b4c836fa1502f7 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/c7/a8f170b0e39e8d07a23ca115b4c836fa1502f7: unexpected operator
++ [ git/objects/c7/a8f170b0e39e8d07a23ca115b4c836fa1502f7 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/c7/a8f170b0e39e8d07a23ca115b4c836fa1502f7: unexpected operator
++ EXTENSION=git/objects/pack
++ [ git/objects/pack == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/pack: unexpected operator
++ [ git/objects/pack == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/pack: unexpected operator
++ EXTENSION=git/objects/f8
++ [ git/objects/f8 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/f8: unexpected operator
++ [ git/objects/f8 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/f8: unexpected operator
++ EXTENSION=git/objects/f8/74f13d2dc425290b849624458895b9c80c5ab5
++ [ git/objects/f8/74f13d2dc425290b849624458895b9c80c5ab5 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/f8/74f13d2dc425290b849624458895b9c80c5ab5: unexpected operator
++ [ git/objects/f8/74f13d2dc425290b849624458895b9c80c5ab5 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/f8/74f13d2dc425290b849624458895b9c80c5ab5: unexpected operator
++ EXTENSION=git/objects/94
++ [ git/objects/94 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/94: unexpected operator
++ [ git/objects/94 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/94: unexpected operator
++ EXTENSION=git/objects/94/77699965d817603777d58abbbe236f006be181
++ [ git/objects/94/77699965d817603777d58abbbe236f006be181 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/94/77699965d817603777d58abbbe236f006be181: unexpected operator
++ [ git/objects/94/77699965d817603777d58abbbe236f006be181 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/94/77699965d817603777d58abbbe236f006be181: unexpected operator
++ EXTENSION=git/objects/7c
++ [ git/objects/7c == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/7c: unexpected operator
++ [ git/objects/7c == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/7c: unexpected operator
++ EXTENSION=git/objects/7c/dcd25ae6fc68a10f6525a357c0be10c77f92b4
++ [ git/objects/7c/dcd25ae6fc68a10f6525a357c0be10c77f92b4 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/7c/dcd25ae6fc68a10f6525a357c0be10c77f92b4: unexpected operator
++ [ git/objects/7c/dcd25ae6fc68a10f6525a357c0be10c77f92b4 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/7c/dcd25ae6fc68a10f6525a357c0be10c77f92b4: unexpected operator
++ EXTENSION=git/objects/59
++ [ git/objects/59 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/59: unexpected operator
++ [ git/objects/59 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/59: unexpected operator
++ EXTENSION=git/objects/59/b446c0349cec7304c13959771fad1dccab0477
++ [ git/objects/59/b446c0349cec7304c13959771fad1dccab0477 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/59/b446c0349cec7304c13959771fad1dccab0477: unexpected operator
++ [ git/objects/59/b446c0349cec7304c13959771fad1dccab0477 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/59/b446c0349cec7304c13959771fad1dccab0477: unexpected operator
++ EXTENSION=git/objects/1f
++ [ git/objects/1f == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/1f: unexpected operator
++ [ git/objects/1f == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/1f: unexpected operator
++ EXTENSION=git/objects/1f/a025d0381bb6e5d7ea4443464190b6fc3eb278
++ [ git/objects/1f/a025d0381bb6e5d7ea4443464190b6fc3eb278 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/1f/a025d0381bb6e5d7ea4443464190b6fc3eb278: unexpected operator
++ [ git/objects/1f/a025d0381bb6e5d7ea4443464190b6fc3eb278 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/1f/a025d0381bb6e5d7ea4443464190b6fc3eb278: unexpected operator
++ EXTENSION=git/objects/info
++ [ git/objects/info == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/info: unexpected operator
++ [ git/objects/info == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/info: unexpected operator
++ EXTENSION=git/objects/f1
++ [ git/objects/f1 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/f1: unexpected operator
++ [ git/objects/f1 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/f1: unexpected operator
++ EXTENSION=git/objects/f1/6041f14796e13dd9949904f5e25a1d7674ec51
++ [ git/objects/f1/6041f14796e13dd9949904f5e25a1d7674ec51 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/f1/6041f14796e13dd9949904f5e25a1d7674ec51: unexpected operator
++ [ git/objects/f1/6041f14796e13dd9949904f5e25a1d7674ec51 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/f1/6041f14796e13dd9949904f5e25a1d7674ec51: unexpected operator
++ EXTENSION=git/objects/d9
++ [ git/objects/d9 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/d9: unexpected operator
++ [ git/objects/d9 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/d9: unexpected operator
++ EXTENSION=git/objects/d9/2f0c20430cb835f9818a6cd981ed776206815b
++ [ git/objects/d9/2f0c20430cb835f9818a6cd981ed776206815b == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/d9/2f0c20430cb835f9818a6cd981ed776206815b: unexpected operator
++ [ git/objects/d9/2f0c20430cb835f9818a6cd981ed776206815b == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/d9/2f0c20430cb835f9818a6cd981ed776206815b: unexpected operator
++ EXTENSION=git/objects/b3
++ [ git/objects/b3 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/b3: unexpected operator
++ [ git/objects/b3 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/b3: unexpected operator
++ EXTENSION=git/objects/b3/d9bbc7f3711e882119cd6b3af051245d859d04
++ [ git/objects/b3/d9bbc7f3711e882119cd6b3af051245d859d04 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/b3/d9bbc7f3711e882119cd6b3af051245d859d04: unexpected operator
++ [ git/objects/b3/d9bbc7f3711e882119cd6b3af051245d859d04 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/objects/b3/d9bbc7f3711e882119cd6b3af051245d859d04: unexpected operator
++ EXTENSION=git/refs
++ [ git/refs == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs: unexpected operator
++ [ git/refs == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs: unexpected operator
++ EXTENSION=git/refs/heads
++ [ git/refs/heads == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/heads: unexpected operator
++ [ git/refs/heads == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/heads: unexpected operator
++ EXTENSION=git/refs/remotes
++ [ git/refs/remotes == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/remotes: unexpected operator
++ [ git/refs/remotes == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/remotes: unexpected operator
++ EXTENSION=git/refs/remotes/origin
++ [ git/refs/remotes/origin == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/remotes/origin: unexpected operator
++ [ git/refs/remotes/origin == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/remotes/origin: unexpected operator
++ EXTENSION=git/refs/remotes/origin/master
++ [ git/refs/remotes/origin/master == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/remotes/origin/master: unexpected operator
++ [ git/refs/remotes/origin/master == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/remotes/origin/master: unexpected operator
++ EXTENSION=git/refs/remotes/origin/test1
++ [ git/refs/remotes/origin/test1 == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/remotes/origin/test1: unexpected operator
++ [ git/refs/remotes/origin/test1 == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/remotes/origin/test1: unexpected operator
++ EXTENSION=git/refs/tags
++ [ git/refs/tags == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/tags: unexpected operator
++ [ git/refs/tags == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/refs/tags: unexpected operator
++ EXTENSION=git/info
++ [ git/info == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/info: unexpected operator
++ [ git/info == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/info: unexpected operator
++ EXTENSION=git/info/exclude
++ [ git/info/exclude == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/info/exclude: unexpected operator
++ [ git/info/exclude == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/info/exclude: unexpected operator
++ EXTENSION=git/description
++ [ git/description == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/description: unexpected operator
++ [ git/description == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/description: unexpected operator
++ EXTENSION=git/config
++ [ git/config == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/config: unexpected operator
++ [ git/config == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: git/config: unexpected operator
++ EXTENSION=md
++ [ md == php ]
+/tmp/jenkins7219466801983830356.sh: 6: [: md: unexpected operator
++ [ md == phtml ]
+/tmp/jenkins7219466801983830356.sh: 6: [: md: unexpected operator
+Finished: SUCCESS
